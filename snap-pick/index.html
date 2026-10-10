@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snap &amp; Pick | Household Waste Collection Scheduling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Lora:ital,wght@0,400..600;1,400..600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="mx-auto max-w-6xl px-4 py-16">
+        <!-- Hero -->
+        <section class="text-center">
+            <p data-animate="fade"
+                class="glass mb-5 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-dark">
+                <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+                Household Waste Collection
+            </p>
+
+            <h1 data-animate="fade"
+                class="mx-auto max-w-3xl text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl">
+                Smarter household waste pickups, scheduled by <span class="text-brand">capacity</span>.
+            </h1>
+            <p data-animate="fade" class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
+                Request a pickup, get grouped by area and date, assigned to a vehicle slot that never overflows,
+                and track it until it's collected.
+            </p>
+
+            <div data-animate="fade" class="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <a href="/login-household.html" class="btn-primary">
+                    Request a pickup
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </a>
+                <a href="#how" class="btn-ghost">How it works</a>
+            </div>
+        </section>
+
+        <!-- Role cards -->
+        <section class="mt-16 grid gap-6 md:grid-cols-3">
+            <a href="/login-household.html" data-animate="card" class="role-card card group block">
+                <div
+                    class="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/80 bg-white/60 text-brand-dark shadow-sm transition group-hover:bg-white/90">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 10.5 12 3l9 7.5" />
+                        <path d="M5 9.5V20h5v-6h4v6h5V9.5" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Household</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">Submit a pickup with waste type and quantity.
+                    Track status or cancel.</p>
+                <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+                    Open
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/login-admin.html" data-animate="card" class="role-card card group block">
+                <div
+                    class="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/80 bg-white/60 text-brand-dark shadow-sm transition group-hover:bg-white/90">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Admin / Dispatcher</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">See requests grouped by area and date, run
+                    scheduling, manage capacity.</p>
+                <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+                    Open
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/collector.html" data-animate="card" class="role-card card group block">
+                <div
+                    class="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/80 bg-white/60 text-brand-dark shadow-sm transition group-hover:bg-white/90">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 6h11v10H3z" />
+                        <path d="M14 9h4l3 3v4h-7" />
+                        <circle cx="7" cy="18" r="2" />
+                        <circle cx="17" cy="18" r="2" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Collector</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">Get today's schedule and mark pickups as
+                    collected or missed.</p>
+                <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+                    Open
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+        </section>
+
+        <!-- Workflow -->
+        <section id="how" class="mt-28 scroll-mt-24">
+            <div class="grid gap-14 lg:grid-cols-12">
+
+                <!-- Left: heading + intro -->
+                <div class="lg:col-span-5">
+                    <div class="lg:sticky lg:top-28">
+                        <p data-animate="fade" class="text-[11px] font-bold uppercase tracking-[0.3em] text-brand">The
+                            process</p>
+                        <h2 data-animate="fade"
+                            class="font-display mt-4 text-4xl font-light leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">
+                            From a quiet request to a <em class="font-normal text-brand-dark">clean doorstep</em>
+                        </h2>
+                        <p data-animate="fade" class="font-prose mt-6 max-w-md text-[17px] leading-8 text-slate-600">
+                            Collecting waste fairly is mostly a problem of timing and weight. Snap &amp; Pick
+                            takes care of both, so that every vehicle leaves full but never overloaded, and every
+                            household knows exactly when to expect us.
+                        </p>
+                        <a data-animate="fade" href="/login-household.html" class="btn-primary mt-8">
+                            Request a pickup
+                            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: timeline -->
+                <ol class="relative lg:col-span-7 ml-3 border-l border-brand/30 pl-10 sm:pl-14">
+
+                    <li data-animate="fade" class="relative pb-14">
+                        <span
+                            class="absolute -left-[49px] top-2 grid h-4 w-4 place-items-center rounded-full bg-white/80 ring-1 ring-brand/50 sm:-left-[65px]">
+                            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+                        </span>
+                        <p class="font-display text-sm italic text-brand">01</p>
+                        <h3 class="font-display mt-1 text-2xl font-medium tracking-tight text-slate-900">Tell us what
+                            you're letting go</h3>
+                        <p class="font-prose mt-3 text-[16px] leading-8 text-slate-600">
+                            Fill in a short form with the kind of waste you have (wet, dry, hazardous, electronic or
+                            bulky), roughly how many kilograms, your address and the day that suits you. A quick
+                            photo helps the collector know what to expect. If you would like, we will also send
+                            WhatsApp updates as your pickup progresses.
+                        </p>
+                        <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Takes under a
+                            minute</p>
+                    </li>
+
+                    <li data-animate="fade" class="relative pb-14">
+                        <span
+                            class="absolute -left-[49px] top-2 grid h-4 w-4 place-items-center rounded-full bg-white/80 ring-1 ring-brand/50 sm:-left-[65px]">
+                            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+                        </span>
+                        <p class="font-display text-sm italic text-brand">02</p>
+                        <h3 class="font-display mt-1 text-2xl font-medium tracking-tight text-slate-900">We gather your
+                            neighbours' requests</h3>
+                        <p class="font-prose mt-3 text-[16px] leading-8 text-slate-600">
+                            Requests from the same area and the same date are brought together, so one vehicle can
+                            serve a whole street in a single trip rather than many scattered ones. Fewer journeys
+                            mean quieter roads and a lighter footprint for everyone.
+                        </p>
+                        <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Grouped by area
+                            and date</p>
+                    </li>
+
+                    <li data-animate="fade" class="relative pb-14">
+                        <span
+                            class="absolute -left-[49px] top-2 grid h-4 w-4 place-items-center rounded-full bg-white/80 ring-1 ring-brand/50 sm:-left-[65px]">
+                            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+                        </span>
+                        <p class="font-display text-sm italic text-brand">03</p>
+                        <h3 class="font-display mt-1 text-2xl font-medium tracking-tight text-slate-900">A slot that
+                            always fits</h3>
+                        <p class="font-prose mt-3 text-[16px] leading-8 text-slate-600">
+                            Every vehicle carries a fixed load, and the scheduler never goes past it. When a day is
+                            full, your request quietly moves to the next available slot. If nothing is free, you
+                            are placed on a waitlist and promoted automatically the moment space opens up, with no
+                            need to ask again.
+                        </p>
+                        <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Capacity-aware,
+                            never overloaded</p>
+                    </li>
+
+                    <li data-animate="fade" class="relative pb-14">
+                        <span
+                            class="absolute -left-[49px] top-2 grid h-4 w-4 place-items-center rounded-full bg-white/80 ring-1 ring-brand/50 sm:-left-[65px]">
+                            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+                        </span>
+                        <p class="font-display text-sm italic text-brand">04</p>
+                        <h3 class="font-display mt-1 text-2xl font-medium tracking-tight text-slate-900">Your driver is
+                            on the way</h3>
+                        <p class="font-prose mt-3 text-[16px] leading-8 text-slate-600">
+                            The collector receives an ordered route with addresses, photos and phone numbers, laid
+                            out to keep the distance short. You are told who is coming and in which truck, and if
+                            you have opted in, we send a message once your driver is close, so you can bring your
+                            waste out in time.
+                        </p>
+                        <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Route-optimised,
+                            with live alerts</p>
+                    </li>
+
+                    <li data-animate="fade" class="relative">
+                        <span
+                            class="absolute -left-[49px] top-2 grid h-4 w-4 place-items-center rounded-full bg-white/80 ring-1 ring-brand/50 sm:-left-[65px]">
+                            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
+                        </span>
+                        <p class="font-display text-sm italic text-brand">05</p>
+                        <h3 class="font-display mt-1 text-2xl font-medium tracking-tight text-slate-900">Collected, or
+                            gently rescheduled</h3>
+                        <p class="font-prose mt-3 text-[16px] leading-8 text-slate-600">
+                            Once the pickup is done, it is marked as collected and you can see it on your tracker.
+                            If something goes wrong and a pickup is missed, the dispatcher puts it back on the
+                            schedule for a new date. You can also cancel at any time before the truck arrives.
+                        </p>
+                        <p class="mt-3 text-xs font-semibold uppercase tracking-widest text-slate-400">Every status,
+                            tracked end to end</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/60 py-6 text-center text-xs text-slate-500">
+        Snap &amp; Pick &middot; Household Waste Collection Scheduling
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Snap &amp; Pick</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="mx-auto max-w-6xl px-4 py-12">
+        <!-- Header + actions -->
+        <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+                <h1 data-animate="fade" class="text-3xl font-extrabold tracking-tight">Admin / Dispatcher</h1>
+                <p data-animate="fade" class="mt-2 text-slate-600">Group requests, assign capacity-aware slots, and
+                    handle exceptions.</p>
+            </div>
+            <div data-animate="fade" class="flex flex-wrap items-end gap-3">
+                <div>
+                    <label class="label" for="schedDate">Schedule for date <span
+                            class="font-normal normal-case tracking-normal text-slate-400">(blank = all)</span></label>
+                    <input id="schedDate" type="date" class="input" />
+                </div>
+                <button id="runBtn" class="btn-primary" type="button">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 4l14 8-14 8z" />
+                    </svg>
+                    Run scheduler
+                </button>
+                <button id="resetBtn" class="btn-ghost" type="button">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+                        <path d="M3 3v5h5" />
+                    </svg>
+                    Reset demo
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <section id="stats" class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6"></section>
+
+        <!-- Demand analytics (stretch) -->
+        <section class="mt-12">
+            <div data-animate="fade" class="flex items-center gap-3">
+                <span
+                    class="grid h-9 w-9 place-items-center rounded-xl border border-white/80 bg-white/60 text-brand-dark shadow-sm">
+                    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 17l6-6 4 4 8-9" />
+                        <path d="M15 6h6v6" />
+                    </svg>
+                </span>
+                <div>
+                    <h2 class="text-lg font-bold tracking-tight">Collection demand</h2>
+                    <p class="text-xs text-slate-500">Based on all non-cancelled requests.</p>
+                </div>
+            </div>
+            <div id="analytics" class="mt-4 grid gap-4 lg:grid-cols-3"></div>
+        </section>
+
+        <!-- Slots + capacity -->
+        <section class="mt-12">
+            <h2 data-animate="fade" class="text-lg font-bold tracking-tight">Vehicle slots and capacity</h2>
+            <div id="slotList" class="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+        </section>
+
+        <!-- Exceptions -->
+        <section class="mt-12 grid gap-6 lg:grid-cols-2">
+            <div data-animate="card" class="card">
+                <div class="flex items-center gap-3">
+                    <span
+                        class="grid h-9 w-9 place-items-center rounded-xl border border-white/80 bg-white/60 text-amber-700 shadow-sm">
+                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                        </svg>
+                    </span>
+                    <h2 class="text-lg font-bold tracking-tight">Waitlist <span id="waitCount"
+                            class="text-sm font-medium text-slate-400"></span></h2>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">No capacity was available. These are promoted automatically
+                    when capacity frees up.</p>
+                <div id="waitList" class="mt-4 space-y-3"></div>
+            </div>
+
+            <div data-animate="card" class="card">
+                <div class="flex items-center gap-3">
+                    <span
+                        class="grid h-9 w-9 place-items-center rounded-xl border border-white/80 bg-white/60 text-rose-600 shadow-sm">
+                        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                            <path d="M12 9v4M12 17h.01" />
+                        </svg>
+                    </span>
+                    <h2 class="text-lg font-bold tracking-tight">Missed pickups <span id="missedCount"
+                            class="text-sm font-medium text-slate-400"></span></h2>
+                </div>
+                <p class="mt-2 text-xs text-slate-500">Pick a new date and put them back into the schedule.</p>
+                <div id="missedList" class="mt-4 space-y-3"></div>
+            </div>
+        </section>
+
+        <!-- Grouped requests -->
+        <section class="mt-12">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+                <h2 class="text-lg font-bold tracking-tight">Requests grouped by date and area</h2>
+                <div class="flex gap-3">
+                    <select id="fArea" class="input !w-auto"></select>
+                    <select id="fStatus" class="input !w-auto"></select>
+                </div>
+            </div>
+            <div id="groups" class="mt-4 space-y-4"></div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/js/admin.js"></script>
+</body>
+
+</html>

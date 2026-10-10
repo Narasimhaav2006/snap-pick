@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collector | Snap &amp; Pick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 data-animate="fade" class="text-3xl font-extrabold tracking-tight">Collector</h1>
+    <p data-animate="fade" class="mt-2 text-slate-600">Your pickup schedule. Mark each stop as collected or missed.</p>
+
+    <div data-animate="card" class="card mt-8 grid gap-4 sm:grid-cols-3">
+      <div>
+        <label class="label" for="collectorSel">Collector</label>
+        <select id="collectorSel" class="input"></select>
+      </div>
+      <div>
+        <label class="label" for="dateSel">Date</label>
+        <input id="dateSel" type="date" class="input" />
+      </div>
+      <div class="flex flex-wrap items-end gap-2">
+        <button id="todayBtn" class="btn-ghost" type="button">Today</button>
+        <button id="tomorrowBtn" class="btn-ghost" type="button">Tomorrow</button>
+        <label
+          class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/80 bg-white/50 px-3 py-2 text-sm font-medium text-slate-700">
+          <input id="optRoute" type="checkbox" checked class="h-4 w-4 accent-[#3f7a56]" />
+          Optimise route
+        </label>
+      </div>
+    </div>
+
+    <section id="summary" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4"></section>
+    <section id="schedule" class="mt-6 space-y-6" aria-live="polite"></section>
+  </main>
+
+  <script type="module" src="/src/js/collector.js"></script>
+</body>
+
+</html>

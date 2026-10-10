@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Snap &amp; Pick</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+
+<body data-role="admin">
+    <div id="navbar"></div>
+
+    <main class="mx-auto max-w-md px-4 py-16">
+        <div id="loginRoot"></div>
+        <p class="mt-4 text-center text-sm text-slate-600">
+            New admin? <a href="/register-admin.html" class="font-semibold text-brand hover:underline">Register here</a>
+        </p>
+        <p class="mt-6 text-center text-sm">
+            <a href="/login.html"
+                class="inline-flex items-center gap-1.5 text-slate-500 transition hover:text-slate-800">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M19 12H5M11 6l-6 6 6 6" />
+                </svg>
+                Choose a different role
+            </a>
+        </p>
+    </main>
+
+    <script type="module" src="/src/js/login.js"></script>
+</body>
+
+</html>

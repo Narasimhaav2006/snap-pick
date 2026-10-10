@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Household | Snap &amp; Pick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+    <h1 data-animate="fade" class="text-3xl font-extrabold tracking-tight">Household pickups</h1>
+    <p data-animate="fade" class="mt-2 text-slate-600">Request a pickup and track it until it is collected.</p>
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-5">
+
+      <!-- ===== Request form ===== -->
+      <section data-animate="card" class="card lg:col-span-2 self-start">
+        <h2 class="text-lg font-bold tracking-tight">New pickup request</h2>
+
+        <form id="requestForm" novalidate class="mt-5 space-y-4">
+          <div>
+            <label class="label" for="householdName">Full name</label>
+            <input class="input" id="householdName" name="householdName" type="text" placeholder="e.g. Ashutosh Kumar"
+              autocomplete="name" />
+            <p class="error-text hidden" data-error-for="householdName"></p>
+          </div>
+
+          <div>
+            <label class="label" for="phone">Mobile number</label>
+            <input class="input" id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10"
+              placeholder="10-digit number" autocomplete="tel" />
+            <p class="error-text hidden" data-error-for="phone"></p>
+          </div>
+
+          <div>
+            <label class="label" for="address">Pickup address</label>
+            <textarea class="input" id="address" name="address" rows="2"
+              placeholder="House no., street, landmark"></textarea>
+            <p class="error-text hidden" data-error-for="address"></p>
+          </div>
+
+          <div>
+            <label class="label" for="area">Area</label>
+            <select class="input" id="area" name="area"></select>
+            <p class="error-text hidden" data-error-for="area"></p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="label" for="wasteType">Waste type</label>
+              <select class="input" id="wasteType" name="wasteType"></select>
+              <p class="error-text hidden" data-error-for="wasteType"></p>
+            </div>
+            <div>
+              <label class="label" for="quantityKg">Quantity (kg)</label>
+              <input class="input" id="quantityKg" name="quantityKg" type="number" step="0.5" min="0"
+                placeholder="e.g. 12" />
+              <p class="error-text hidden" data-error-for="quantityKg"></p>
+            </div>
+          </div>
+          <p class="-mt-2 text-xs text-slate-500">Maximum <span id="maxHint"></span> kg per request.</p>
+
+          <div>
+            <label class="label" for="preferredDate">Preferred date</label>
+            <input class="input" id="preferredDate" name="preferredDate" type="date" />
+            <p class="error-text hidden" data-error-for="preferredDate"></p>
+          </div>
+
+          <div>
+            <label class="label">Photo of your waste</label>
+
+            <div id="photoEmpty">
+              <label for="photoInput"
+                class="flex cursor-pointer flex-col items-center gap-1.5 rounded-2xl border-2 border-dashed border-slate-300 bg-white/40 px-4 py-6 text-center text-sm text-slate-500 transition hover:border-brand hover:bg-white/70">
+                <span
+                  class="grid h-10 w-10 place-items-center rounded-xl border border-white/80 bg-white/60 text-brand-dark">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                    <circle cx="12" cy="13" r="3.5" />
+                  </svg>
+                </span>
+                <span class="font-medium text-slate-700">Tap to add a photo</span>
+                <span class="text-xs">Helps the collector see what to expect. It is resized automatically.</span>
+              </label>
+            </div>
+
+            <div id="photoBox" class="relative hidden">
+              <img id="photoPreview" alt="Preview of your waste photo"
+                class="h-44 w-full rounded-2xl border border-white/70 object-cover shadow-sm" />
+              <button id="photoRemove" type="button"
+                class="absolute right-2 top-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-rose-600 shadow backdrop-blur">Remove</button>
+            </div>
+
+            <input id="photoInput" type="file" accept="image/*" class="sr-only" />
+            <p class="error-text hidden" data-error-for="photo"></p>
+          </div>
+
+          <div>
+            <label class="label" for="notes">Notes <span
+                class="font-normal normal-case tracking-normal text-slate-400">(optional)</span></label>
+            <input class="input" id="notes" name="notes" type="text" placeholder="e.g. Bags are near the gate" />
+            <p class="error-text hidden" data-error-for="notes"></p>
+          </div>
+
+          <button id="submitBtn" type="submit" class="btn-primary w-full">Submit request</button>
+        </form>
+      </section>
+
+      <!-- ===== My requests ===== -->
+      <section data-animate="card" class="lg:col-span-3">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <h2 class="text-lg font-bold tracking-tight">Your requests</h2>
+            <p id="loggedAs" class="text-xs text-slate-500"></p>
+          </div>
+          <button id="refreshBtn" class="btn-ghost" type="button">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12a9 9 0 0 1 15.5-6.2L21 8" />
+              <path d="M21 3v5h-5M3 21v-5h5" />
+            </svg>
+            Refresh
+          </button>
+        </div>
+        <div id="requestList" class="mt-6 space-y-4" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="/src/js/household.js"></script>
+</body>
+
+</html>

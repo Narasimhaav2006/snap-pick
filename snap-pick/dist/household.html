@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Household | APEX Waste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/household-CMsRVPwd.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/animations-D2GQkPPG.js">
+  <link rel="modulepreload" crossorigin href="/assets/api-Cni970YR.js">
+  <link rel="stylesheet" crossorigin href="/assets/animations-C1OpLpzp.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="mx-auto max-w-6xl px-4 py-10">
+    <h1 data-animate="fade" class="text-3xl font-extrabold">Household pickups</h1>
+    <p data-animate="fade" class="mt-2 text-slate-600">Request a pickup and track it until it is collected.</p>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-5">
+
+      <!-- ===== Request form ===== -->
+      <section data-animate="card" class="card lg:col-span-2 self-start">
+        <h2 class="text-lg font-bold">New pickup request</h2>
+
+        <form id="requestForm" novalidate class="mt-5 space-y-4">
+          <div>
+            <label class="label" for="householdName">Full name</label>
+            <input class="input" id="householdName" name="householdName" type="text" placeholder="e.g. Ashutosh Kumar"
+              autocomplete="name" />
+            <p class="error-text hidden" data-error-for="householdName"></p>
+          </div>
+
+          <div>
+            <label class="label" for="phone">Mobile number</label>
+            <input class="input" id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10"
+              placeholder="10-digit number" autocomplete="tel" />
+            <p class="error-text hidden" data-error-for="phone"></p>
+          </div>
+
+          <div>
+            <label class="label" for="address">Pickup address</label>
+            <textarea class="input" id="address" name="address" rows="2"
+              placeholder="House no., street, landmark"></textarea>
+            <p class="error-text hidden" data-error-for="address"></p>
+          </div>
+
+          <div>
+            <label class="label" for="area">Area</label>
+            <select class="input" id="area" name="area"></select>
+            <p class="error-text hidden" data-error-for="area"></p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="label" for="wasteType">Waste type</label>
+              <select class="input" id="wasteType" name="wasteType"></select>
+              <p class="error-text hidden" data-error-for="wasteType"></p>
+            </div>
+            <div>
+              <label class="label" for="quantityKg">Quantity (kg)</label>
+              <input class="input" id="quantityKg" name="quantityKg" type="number" step="0.5" min="0"
+                placeholder="e.g. 12" />
+              <p class="error-text hidden" data-error-for="quantityKg"></p>
+            </div>
+          </div>
+          <p class="-mt-2 text-xs text-slate-500">Maximum <span id="maxHint"></span> kg per request.</p>
+
+          <div>
+            <label class="label" for="preferredDate">Preferred date</label>
+            <input class="input" id="preferredDate" name="preferredDate" type="date" />
+            <p class="error-text hidden" data-error-for="preferredDate"></p>
+          </div>
+
+          <div>
+            <label class="label" for="notes">Notes <span class="font-normal text-slate-400">(optional)</span></label>
+            <input class="input" id="notes" name="notes" type="text" placeholder="e.g. Bags are near the gate" />
+            <p class="error-text hidden" data-error-for="notes"></p>
+          </div>
+
+          <button id="submitBtn" type="submit" class="btn-primary w-full">Submit request</button>
+        </form>
+      </section>
+
+      <!-- ===== My requests ===== -->
+      <section data-animate="card" class="lg:col-span-3">
+        <div class="flex flex-wrap items-end gap-3">
+          <div class="min-w-0 flex-1">
+            <label class="label" for="lookupPhone">Track requests by mobile number</label>
+            <input class="input" id="lookupPhone" type="tel" inputmode="numeric" maxlength="10"
+              placeholder="10-digit number" />
+          </div>
+          <button id="lookupBtn" class="btn-ghost" type="button">Show my requests</button>
+        </div>
+
+        <div id="requestList" class="mt-6 space-y-4" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+</body>
+
+</html>

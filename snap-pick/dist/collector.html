@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collector | APEX Waste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/collector-C6b_bMjI.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/animations-D2GQkPPG.js">
+  <link rel="modulepreload" crossorigin href="/assets/api-Cni970YR.js">
+  <link rel="stylesheet" crossorigin href="/assets/animations-C1OpLpzp.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="mx-auto max-w-4xl px-4 py-10">
+    <h1 data-animate="fade" class="text-3xl font-extrabold">Collector</h1>
+    <p data-animate="fade" class="mt-2 text-slate-600">Your pickup schedule. Mark each stop as collected or missed.</p>
+
+    <div data-animate="card" class="card mt-8 grid gap-4 sm:grid-cols-3">
+      <div>
+        <label class="label" for="collectorSel">Collector</label>
+        <select id="collectorSel" class="input"></select>
+      </div>
+      <div>
+        <label class="label" for="dateSel">Date</label>
+        <input id="dateSel" type="date" class="input" />
+      </div>
+      <div class="flex flex-wrap items-end gap-2">
+        <button id="todayBtn" class="btn-ghost" type="button">Today</button>
+        <button id="tomorrowBtn" class="btn-ghost" type="button">Tomorrow</button>
+        <label class="flex items-center gap-2 text-sm font-medium text-slate-700">
+          <input id="optRoute" type="checkbox" checked class="h-4 w-4 accent-green-600" />
+          Optimise route
+        </label>
+      </div>
+    </div>
+
+    <section id="summary" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4"></section>
+    <section id="schedule" class="mt-6 space-y-6" aria-live="polite"></section>
+  </main>
+
+</body>
+
+</html>

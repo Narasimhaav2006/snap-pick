@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Snap &amp; Pick</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="mx-auto max-w-4xl px-4 py-16">
+        <h1 data-animate="fade" class="text-center text-3xl font-extrabold tracking-tight">Log in as</h1>
+        <p data-animate="fade" class="mt-2 text-center text-slate-600">Choose how you use Snap &amp; Pick.</p>
+
+        <section class="mt-10 grid gap-6 md:grid-cols-3">
+            <a href="/login-household.html" data-animate="card" class="role-card card group block">
+                <div
+                    class="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/80 bg-white/60 text-brand-dark shadow-sm transition group-hover:bg-white/90">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 10.5 12 3l9 7.5" />
+                        <path d="M5 9.5V20h5v-6h4v6h5V9.5" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Household</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">Request pickups and track them.</p>
+                <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+                    Continue
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/login-admin.html" data-animate="card" class="role-card card group block">
+                <div
+                    class="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/80 bg-white/60 text-brand-dark shadow-sm transition group-hover:bg-white/90">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Admin / Dispatcher</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">Schedule slots and manage capacity.</p>
+                <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+                    Continue
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+
+            <a href="/login-collector.html" data-animate="card" class="role-card card group block">
+                <div
+                    class="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/80 bg-white/60 text-brand-dark shadow-sm transition group-hover:bg-white/90">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.7"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 6h11v10H3z" />
+                        <path d="M14 9h4l3 3v4h-7" />
+                        <circle cx="7" cy="18" r="2" />
+                        <circle cx="17" cy="18" r="2" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight">Collector</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">View your schedule and update pickups.</p>
+                <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+                    Continue
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                </span>
+            </a>
+        </section>
+    </main>
+
+    <script type="module" src="/src/js/login-choose.js"></script>
+</body>
+
+</html>
